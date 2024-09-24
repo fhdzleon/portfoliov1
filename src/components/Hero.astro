@@ -1,0 +1,26 @@
+---
+const title = 'Permiteme presentarme. Soy';
+const name = 'Felipe Hernández';
+import ButtonHero from './ButtonHero.astro';
+---
+
+<div class="flex flex-col justify-center min-h-screen px-4 md:px-8 lg:px-16">
+  <div class="flex text-start flex-col space-y-5 max-w-3xl mx-auto">
+    <p class="font-orbitron text-lg md:text-xl text-wine">{title}</p>
+    <h1 class="font-orbitron text-3xl md:text-5xl lg:text-7xl font-semibold text-blue">
+      {name}
+    </h1>
+    
+
+    <div class="space-y-1 mb-3">
+      <p class="text-textColor font-bold text-lg md:text-xl">
+        Frontend Developer
+      </p>
+      <p class="text-textColor text-base md:text-xl">
+        Creando aplicaciones web funcionales y atractivas, aprovechando las
+        últimas tecnologías para ofrecer experiencias únicas a los usuarios.
+      </p>
+    </div>
+    <ButtonHero />
+  </div>
+</div>
