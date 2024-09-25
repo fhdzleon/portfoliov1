@@ -1,10 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import Aboutme from '../components/Aboutme.astro';
 ---
 
 <Layout title="SkullDev Portfolio v1">
-  <main>
-    <Hero />
+  <main class="flex flex-col">
+    <section id="home">
+      <Hero />
+    </section>
+    <section id="aboutme">
+      <Aboutme />
+    </section>
   </main>
 </Layout>

@@ -27,9 +27,9 @@ import SideMenu from '../components/SideMenu.astro';
   </head>
   <body>
     <div>
-		<NavBar/>
+      <NavBar />
       <slot />
-	  <SideMenu/>
+      <SideMenu />
     </div>
   </body>
 </html>
@@ -48,9 +48,10 @@ import SideMenu from '../components/SideMenu.astro';
   html {
     font-family: system-ui, sans-serif;
     background: #f2e8c9;
+    scroll-behavior: smooth;
   }
 
-/*   body {
+  /*   body {
     @apply flex items-center justify-center min-h-screen;
   }
 
