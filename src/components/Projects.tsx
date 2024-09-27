@@ -32,14 +32,18 @@ const ProjectList: React.FC = () => {
         </ul>
       </div>
 
-      <div className="md:w-3/5">
+      <div className="md:w-3/5 mt-16">
         {selectedProject ? (
           <div className="flex flex-col ">
             <div className="flex items-center justify-between mb-5">
               <h1 className="font-orbitron text-lg md:text-2xl font-semibold text-wine  ">
                 {selectedProject.name}
               </h1>
-              <a href={selectedProject.deployUrl} target="_blank">
+              <a
+                href={selectedProject.deployUrl}
+                target="_blank"
+                className="relative z-10"
+              >
                 <button className="border-2 rounded border-wine px-3 py-1 font-orbitron text-wine">
                   Visitame
                 </button>
@@ -58,7 +62,7 @@ const ProjectList: React.FC = () => {
             </div>
 
             <div>
-              <p className="text-textColor text-base xl:text-xl mb-6 ">
+              <p className="text-textColor text-base xl:text-lg mb-6 ">
                 {selectedProject.description}
               </p>
             </div>
