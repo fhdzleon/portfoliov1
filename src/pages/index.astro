@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Aboutme from '../components/Aboutme.astro';
 import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects';
 ---
 
 <Layout title="SkullDev Portfolio v1">
@@ -15,6 +16,9 @@ import Experience from '../components/Experience.astro';
     </section>
     <section id="experience">
       <Experience />
+    </section>
+    <section id="projects">
+      <Projects client:load />
     </section>
   </main>
 </Layout>
