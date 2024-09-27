@@ -58,7 +58,7 @@ const ProjectList: React.FC = () => {
             </div>
 
             <div>
-              <p className="text-textColor text-base md:text-xl mb-6 ">
+              <p className="text-textColor text-base xl:text-xl mb-6 ">
                 {selectedProject.description}
               </p>
             </div>
@@ -84,7 +84,9 @@ const ProjectList: React.FC = () => {
             </div>
           </div>
         ) : (
-          <h2>Elige el proyecto que quieras ver</h2>
+          <h2 className="text-textColor text-base md:text-lg xl:text-xl mb-6">
+            Elige un proyecto para ver sus detalles
+          </h2>
         )}
       </div>
     </div>
