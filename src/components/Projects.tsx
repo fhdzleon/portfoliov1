@@ -10,6 +10,11 @@ const ProjectList: React.FC = () => {
     setSelectedProject(projectsData[index]);
   };
 
+  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const index = parseInt(event.target.value);
+    setSelectedProject(projectsData[index]);
+  };
+
   console.log('Estado del proyecto seleccionado:', selectedProject); // Verifica el estado actual
 
   return (
@@ -19,7 +24,23 @@ const ProjectList: React.FC = () => {
           Mis proyectos
         </h2>
 
-        <ul className="text-blue font-orbitron font-semibold space-y-2 text-base md:text-xl mb-3">
+        {/* Select para pantallas pequeñas */}
+        <select
+          onChange={handleSelectChange}
+          className="block md:hidden text-blue font-orbitron font-semibold mb-3"
+        >
+          <option value="" disabled selected>
+            Selecciona un proyecto
+          </option>
+          {projectsData.map((project, index) => (
+            <option value={index} key={index}>
+              {project.name}
+            </option>
+          ))}
+        </select>
+
+        {/* Lista para pantallas grandes */}
+        <ul className="hidden md:block text-blue font-orbitron font-semibold space-y-2 text-base md:text-xl mb-3">
           {projectsData.map((project, index) => (
             <li
               className="cursor-pointer"
@@ -36,7 +57,7 @@ const ProjectList: React.FC = () => {
         {selectedProject ? (
           <div className="flex flex-col ">
             <div className="flex items-center justify-between mb-5">
-              <h1 className="font-orbitron text-lg md:text-2xl font-semibold text-wine  ">
+              <h1 className="font-orbitron text-lg md:text-2xl font-semibold text-wine">
                 {selectedProject.name}
               </h1>
               <a
@@ -45,7 +66,7 @@ const ProjectList: React.FC = () => {
                 className="relative z-10"
               >
                 <button className="border-2 rounded border-wine px-3 py-1 font-orbitron text-wine">
-                  Visitame
+                  Visítame
                 </button>
               </a>
             </div>
@@ -56,21 +77,21 @@ const ProjectList: React.FC = () => {
                   key={index}
                   src={image}
                   alt={`Imagen del proyecto ${selectedProject.name}`}
-                  className="w-auto h-48 object-cover shadow-2xl shadow-gray-600 transform rounded-md -translate-x-1 -translate-y-1  "
+                  className="w-auto h-24 md:h-48 object-cover shadow-2xl shadow-gray-600 transform rounded-md -translate-x-1 -translate-y-1"
                 />
               ))}
             </div>
 
             <div>
-              <p className="text-textColor text-base xl:text-lg mb-6 ">
+              <p className="text-textColor text-base xl:text-lg 2xl:text-xl mb-6 ">
                 {selectedProject.description}
               </p>
             </div>
 
-            <h2 className="font-orbitron text-xl font-semibold text-wine  ">
+            <h2 className="font-orbitron text-xl font-semibold text-wine">
               Funciones principales
             </h2>
-            <ul className="list-disc list-inside text-textColor mb-6  ">
+            <ul className="list-disc list-inside text-textColor mb-6">
               {selectedProject.mainFunctions.map((func, index) => (
                 <li key={index}>{func}</li>
               ))}

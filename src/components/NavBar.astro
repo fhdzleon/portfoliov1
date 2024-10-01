@@ -1,25 +1,49 @@
----
-
----
-
 <div class="navbar fixed mt-3 w-full px-14 items-center flex justify-between">
+  <!-- Logo -->
   <div>
-    <a href="#home"
-      ><img
-        class="h-32"
+    <a href="#home">
+      <img
+        <img
+        class="hidden md:block md:h-32 z-10"
         src="https://i.postimg.cc/3Nk9hTqz/logo.png"
         alt="logo"
-      /></a
-    >
+      />
+    </a>
   </div>
-  <div class="max-w-screen-xl">
-    <ul class="flex space-x-7 text-base items-center font-orbitron text-wine">
+
+  <!-- Hamburguesa (se muestra en pantallas pequeñas) -->
+  <div class="md:hidden z-50">
+    <button id="hamburger" class="text-wine focus:outline-none">
+      <!-- Icono de hamburguesa -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-8 w-8"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Menú (oculto en pantallas pequeñas) -->
+  <div
+    id="menu"
+    class="hidden md:flex flex-col md:flex-row md:space-x-7 text-base items-center font-orbitron text-wine"
+  >
+    <ul
+      class="flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-7 text-center"
+    >
       <li
         class="border-b-2 border-transparent hover:border-blue transition duration-300"
       >
         <a href="#aboutme">Acerca de mí</a>
       </li>
-
       <li
         class="border-b-2 border-transparent hover:border-blue transition duration-300"
       >
@@ -33,7 +57,6 @@
       <li
         class="border-b-2 border-transparent hover:border-blue transition duration-300"
       >
-        Contacto
       </li>
       <a
         href="https://drive.google.com/file/d/1r1E-u9Zd4PdS2ekFuhe8sBN8jXqLoIdP/view"
@@ -44,3 +67,23 @@
     </ul>
   </div>
 </div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('menu');
+  if (hamburger && menu) {
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      menu.classList.toggle('absolute');
+      menu.classList.toggle('bg-white/80');
+      menu.classList.toggle('backdrop-blur-md');
+      menu.classList.toggle('top-20');
+      menu.classList.toggle('left-0');
+      menu.classList.toggle('right-0');
+      menu.classList.toggle('w-full');
+      menu.classList.toggle('p-5');
+      menu.classList.toggle('z-50');
+      menu.classList.toggle('shadow-lg');
+    });
+  }
+</script>
